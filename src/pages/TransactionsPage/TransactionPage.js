@@ -91,7 +91,7 @@ export default function TransactionsPage() {
         <SignOutIcon onClick={signOut} />
       </TopContainer>
       {transactionsList === null ? (
-        <>Loading</>
+        <Loading/>
       ) : (
         <>
           {transactionsList.length === 0 ? (
@@ -132,6 +132,7 @@ const PageContainer = styled.div`
   padding: 25px;
   background-color: ${COLORS.background};
   align-items: center;
+  justify-content:space-between;
 `;
 const TransactionsContainer = styled.div`
   width: 326px;
@@ -203,3 +204,24 @@ const TopContainer = styled.div`
   }
 `;
 
+const Loading = styled.div`
+
+    width: 90px;
+    height: 90px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+`
