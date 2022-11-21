@@ -1,11 +1,16 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import { COLORS } from "../../constants/colors";
 import { FONTS } from "../../constants/fonts";
+import { useEffect } from "react";
 
 export default function LoginPage(){
-   
+    let navigate = useNavigate();
+   useEffect (()=> 
+   {if(localStorage.getItem("token")&&localStorage.getItem("name")){
+    navigate("/transactions")
+   }},[])
     return(
         <PageContainer >
         <Logo>MyWallet</Logo>
