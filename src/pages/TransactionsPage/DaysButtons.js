@@ -32,7 +32,7 @@ button{
   border-radius:5px;
   border:none;
   &:active {
-    background-color:#bfb4c4;
+    background-color:#7e41a8;
   }
 }
 
